@@ -60,11 +60,7 @@
                 <groupId>com.github.sfdez0</groupId>
                 <artifactId>TestSmells-Detector_Maven</artifactId>
                 <version>1.0</version> 
-                
-                <configuration>
-                    <rutaCsv>${project.basedir}/lista-tests.csv</rutaCsv>
-                </configuration>
-                
+				
                 <executions>
                     <execution>
                         <phase>test</phase> 
