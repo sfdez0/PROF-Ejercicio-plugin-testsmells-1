@@ -28,7 +28,12 @@
 			<version>5.10.0</version>
 			<scope>test</scope>
 		</dependency>
-
+		<!-- https://github.com/sfdez0/TestSmells-Detector_Maven -->
+		<dependency>
+			<groupId>com.github.sfdez0</groupId>
+			<artifactId>TestSmells-Detector_Maven</artifactId>
+			<version>1.0</version>
+		</dependency>
 	</dependencies>
 
 	<build>
@@ -50,7 +55,32 @@
 				<version>2.22.0</version>
 			</plugin>
 
+			<!-- https://github.com/sfdez0/TestSmells-Detector_Maven -->
+			<plugin>
+                <groupId>com.github.sfdez0</groupId>
+                <artifactId>TestSmells-Detector_Maven</artifactId>
+                <version>1.0</version> 
+                
+                <configuration>
+                    <rutaCsv>${project.basedir}/lista-tests.csv</rutaCsv>
+                </configuration>
+                
+                <executions>
+                    <execution>
+                        <phase>test</phase> 
+						<goals>
+                            <goal>tsdetect</goal> 
+						</goals>
+                    </execution>
+                </executions>
+            </plugin>
 		</plugins>
 	</build>
 
+	<repositories>
+		<repository>
+		    <id>jitpack.io</id>
+		    <url>https://jitpack.io</url>
+		</repository>
+	</repositories>
 </project>
